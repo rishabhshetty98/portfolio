@@ -1,0 +1,11 @@
+a {
+  margin: 2px !important;
+}
+
+p {
+  margin-left: 5px;
+}
+
+.gradient_backend {
+  background: linear-gradient(90deg, #3972a0, #f7dd61);
+}

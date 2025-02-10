@@ -1,10 +1,11 @@
 import { useState } from "react";
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar/Navbar";
 import Home from "./pages/Home";
 import Portfolio from "./pages/Portfolio";
 import Contact from "./pages/Contact";
+import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -16,17 +17,23 @@ function App() {
     console.log("Clicked Anchor ID: ", selectedTab);
   };
   return (
-    <Router>
+    <div className="main-content">
       <div>
-        <Navbar activeSelection={selectedTab} onClick={selectionHandler} />
+        <p>Photo and some text here</p>
       </div>
+      <Router>
+        {/* <div className="sticky-navbar">
+          <Navbar activeSelection={selectedTab} onClick={selectionHandler} />
+        </div> */}
+        <Navbar activeSelection={selectedTab} onClick={selectionHandler} />
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/portfolio" element={<Portfolio />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-    </Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </Router>
+    </div>
   );
 }
 
